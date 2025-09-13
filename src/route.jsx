@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import SignUp from "./Component/Pages/SignUp";
 import Login from "./Component/Pages/Login";
+import Postcard from "./Component/Pages/Postcard";
 
 export const router = createBrowserRouter([
     {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login/>
+    },
+    {
+        path : "/login/postcard",
+        element : <Postcard/>
     }
     
 ])
