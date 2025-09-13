@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { client } from "../../Lib/idex";
+import { useNavigate , Link } from "react-router";
 
 const forSchema = z.object({
   username: z
@@ -17,7 +18,7 @@ const forSchema = z.object({
 });
 
 export default function SignUp() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     handleSubmit,
