@@ -1,4 +1,3 @@
-import {  data, Link, useNavigate } from "react-router";
 import insta from "../../images/instamain.svg";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -44,7 +43,7 @@ export default function SignUp() {
   return (
     <div className="flex min-h-screen   items-center justify-center ">
       <div className="flex flex-col border-1 border-[#9b9191b0] p-[84px] gap-[26px]">
-        <img src={insta} alt="Logo" className="max-w-[32`0px]" />
+        <img src={insta} alt="Logo" className="max-w-[320px]" />
 
         <form
           onSubmit={handleSubmit(subForm)}
