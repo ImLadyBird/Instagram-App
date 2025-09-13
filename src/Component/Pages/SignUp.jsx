@@ -36,7 +36,7 @@ export default function SignUp() {
       console.log(response.data);
       
     } catch {
-      console.log("error");
+      console.log("Not Valid");
       
     }
   }
