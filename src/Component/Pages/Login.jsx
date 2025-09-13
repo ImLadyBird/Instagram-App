@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import insta from "../../images/instamain.svg";
 import picInsta from "../../images/picInsta.svg";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { client } from "../../Lib/idex";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,6 +19,7 @@ const forSchema = z.object({
 });
 
 export default function Login() {
+    const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const {
     handleSubmit,
@@ -33,6 +34,7 @@ export default function Login() {
       const response = await client.post("/user/login", { username, password });
       localStorage.setItem("token", response.data.jwt);
       console.log(response);
+      navigate("/login/postcard");
     } catch {
       console.log("error");
     }
