@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { client } from "../../Lib/idex";
+import { Link, useNavigate } from "react-router";
 
 const forSchema = z.object({
   username: z
