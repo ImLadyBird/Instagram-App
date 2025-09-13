@@ -36,11 +36,7 @@ export default function SignUp() {
       navigate("/login");
       console.log(response.data);
     } catch {
-<<<<<<< HEAD
       console.log("Not Valid");
-=======
-      console.log("error");
->>>>>>> a3b00ec8be0de200257796a541ac2018ee8021cf
     }
   }
 
