@@ -4,6 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { client } from "../../Lib/idex";
 import { useNavigate, Link } from "react-router";
+import { useState } from "react";
 
 const forSchema = z.object({
   username: z
@@ -18,6 +19,7 @@ const forSchema = z.object({
 });
 
 export default function SignUp() {
+    const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -34,7 +36,11 @@ export default function SignUp() {
       navigate("/login");
       console.log(response.data);
     } catch {
+<<<<<<< HEAD
       console.log("Not Valid");
+=======
+      console.log("error");
+>>>>>>> a3b00ec8be0de200257796a541ac2018ee8021cf
     }
   }
 
@@ -61,12 +67,21 @@ export default function SignUp() {
             className="bg-gray-100 px-8 py-4 rounded-[8px] border-1 border-[#8a8888]"
           />
           <span className="text-red-500">{errors?.username?.message}</span>
-          <input
-            {...register("password")}
-            type="password"
-            placeholder="Password"
-            className="bg-gray-100 px-8 py-4 rounded-[8px] border-1 border-[#8a8888]"
-          />
+          <div className="bg-gray-100 px-8 py-4 rounded-[8px] border-1 border-1[8a8888] flex gap-15">
+            <input
+              className="border-none bg-transparent outline-none"
+              {...register("password")}
+              placeholder="Password"
+              type={showPassword ? "text" : "password"}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              value="show"
+            >
+              show
+            </button>
+          </div>
           <span className="text-red-500">{errors?.password?.message}</span>
           <button
             type="submit"
