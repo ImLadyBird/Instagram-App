@@ -1,11 +1,12 @@
-import {  Link } from "react-router";
+import {  data, Link, useNavigate } from "react-router";
 import insta from "../../images/instamain.svg";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { client } from "../../Lib/idex";
 
 const forSchema = z.object({
-  name: z
+  username: z
     .string()
     .min(3, { message: "must be atleast 3 characters" })
     .max(20, { message: "must be atmost 20 characters" }),
@@ -17,6 +18,8 @@ const forSchema = z.object({
 });
 
 export default function SignUp() {
+  const navigate = useNavigate()
+
   const {
     handleSubmit,
     register,
@@ -25,8 +28,17 @@ export default function SignUp() {
     resolver: zodResolver(forSchema),
   });
 
-  function subForm(data) {
-    console.log(data);
+  async function subForm(data) {
+    try {
+
+      const response = await client.post("/user/signup",data)
+      navigate("/login")
+      console.log(response.data);
+      
+    } catch {
+      console.log("error");
+      
+    }
   }
 
   return (
@@ -46,12 +58,12 @@ export default function SignUp() {
           />
           <span className="text-red-500">{errors?.email?.message}</span>
           <input
-            {...register("name")}
+            {...register("username")}
             type="text"
             placeholder="User Name"
             className="bg-gray-100 px-8 py-4 rounded-[8px] border-1 border-[#8a8888]"
           />
-          <span className="text-red-500">{errors?.name?.message}</span>
+          <span className="text-red-500">{errors?.username?.message}</span>
           <input
             {...register("password")}
             type="password"
