@@ -11,7 +11,7 @@ import Profile from "../../images/Profile.svg"
 
 export default function Aside() {
   return (
-    <div className="p-5">
+    <div className="p-5 w-1/4">
       <div>
         <img src={insta} alt="" className="max-h-[35px] mb-4" />
         <div className="flex gap-4 flex-col">

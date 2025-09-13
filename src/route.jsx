@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: "/postcard/profile",
+    path: "/login/postcard/profile",
     element: <Profile />,
   },
 ]);
