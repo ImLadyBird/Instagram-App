@@ -7,11 +7,11 @@ import { Link } from "react-router";
 export default function Login() {
     return (
 
-        <div className="flex min-h-screen items-center justify-center">
+        <div className="flex min-h-screen items-center justify-center gap-8">
             <div>
-                <img src={picInsta} alt="pic" className="max-h-[700px]" />
+                <img src={picInsta} alt="pic" className="max-h-[666px]" />
             </div>
-        <div className="flex flex-col borfer-1 border-[#9b9191b0] p-[84px] gap-[26px]">
+        <div className="flex flex-col border-1 border-[#9b9191b0] p-[50px] gap-2 ">
           <img src={insta} alt="Logo" className="max-w-320px" />
 
          <form className="flex flex-col gap-[18px]">
