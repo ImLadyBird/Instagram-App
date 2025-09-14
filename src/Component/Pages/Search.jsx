@@ -10,7 +10,7 @@ const Search = () => {
   const [error, setError] = useState(null);
 
   const toggleSearch = () => {
-    setIsOpen(true);
+    setIsOpen(!isOpen);
     setQuery("");
     setUsers([]);
     setError(null);
@@ -55,7 +55,7 @@ const Search = () => {
        <Aside toggleSearch={toggleSearch} />
      
       {isOpen && (
-        <div className="absolute w-[350px] bg-white shadow-lg rounded-lg p-4 z-10 top-0 ml-10 border border-[#DBDBDB]">
+        <div className="absolute w-[350px] bg-white shadow-lg rounded-lg p-4 z-10 top-17 ml-30 border border-[#DBDBDB] {isOpen ? 'block' : 'hidden'}">
           <h2 className="mb-[37px] text-[#262626] font-semibold text-[23px]">
             Search
           </h2>
