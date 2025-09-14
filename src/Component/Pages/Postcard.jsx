@@ -9,6 +9,7 @@ import Save from "../../images/save.svg";
 import Emojy from "../../images/emojy.svg";
 import { useEffect, useState } from "react";
 import { client } from "../../Lib/idex";
+import LikeButton from "./LikeButton";
 
 export default function Postcard() {
   const [posts, setPosts] = useState([]);
@@ -72,7 +73,8 @@ export default function Postcard() {
 
           <div className="flex flex-row justify-between">
             <div className="flex flex-row gap-3">
-              <img src={Like} alt="like-button" />
+              <LikeButton/>
+              {/* <img src={Like} alt="like-button" /> */}
               <img src={Comments} alt="comment-button" />
             </div>
             <img src={Save} alt="save-button" className="" />
