@@ -7,8 +7,11 @@ import BigProfile from "../../images/icon/bigProfile.svg";
 import Aside from "./aside";
 import HeaderInsta from "../headerinsta";
 import PostsLayout from "../PostsLayout";
+import { useEffect, useState } from "react";
+import { client } from "../../Lib/idex";
 
 export default function Profile() {
+ 
   return (
     <div className="flex justify-between">
       <Aside />
