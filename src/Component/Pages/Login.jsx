@@ -34,7 +34,7 @@ export default function Login() {
       const response = await client.post("/user/login", { username, password });
       localStorage.setItem("token", response.data.accessToken
 );
-    //   console.log(response);
+      console.log(response);
       navigate("/login/postcard");
     } catch {
       console.log("error");

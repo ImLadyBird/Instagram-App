@@ -34,25 +34,25 @@ export default function Postcard() {
     setLoading(false);
   }
 
-  // if (loading) {
-  //   return (
-  //     <div className="flex justify-center items-center h-screen">
-  //       <p className="text-xl">Loading timeline...</p>
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-xl">Loading timeline...</p>
+      </div>
+    );
+  }
 
-  // if (error) {
-  //   return (
-  //     <div className="flex justify-center items-center h-screen">
-  //       <p className="text-xl text-red-500">{error}</p>
-  //     </div>
-  //   );
-  // }
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-xl text-red-500">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-row gap-40 ">
-      {/* <Aside />
+      <Aside />
       <div className="flex flex-col gap-5 py-8">
         <div className="flex flex-row items-center justify-between">
           <div className="flex flex-row gap-2 items-center justify-center">
@@ -81,7 +81,7 @@ export default function Postcard() {
           <p className="text-gray-400">View all 13,384 comments</p>
           <p className="font-bold">Add a comment…</p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
