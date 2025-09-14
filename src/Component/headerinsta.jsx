@@ -1,6 +1,32 @@
+import { useEffect, useState } from "react";
 import BigProfile from "../images/icon/bigProfile.svg";
+import { client } from "../Lib/idex";
 
 export default function HeaderInsta() {
+const [posts, setPosts] = useState([]);
+
+  useEffect(()=>{
+    fetchProfile()
+  },[])
+
+  async function fetchProfile(){
+    try {
+      const token = localStorage.getItem("token");
+      const response = await client.get("/user/followings/johndoe", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      console.log(response.data);
+    } catch {
+      console.log("error");
+    }
+    
+  }
+
+
+
   return (
     <div className="flex flex-row w-3/4 pt-9 gap-24 h-64 mt-9 items-center border-b border-zinc-200 pb-19 ">
       <img className=" rounded-[50%] " src={BigProfile} alt="BigProfile" />
