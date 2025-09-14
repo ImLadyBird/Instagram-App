@@ -7,7 +7,6 @@ export default function HeaderInsta() {
       <div className="flex flex-col gap-">
         <div className="flex gap-10">
         <h2 className="text-2xl pb-3">upvox_</h2>
-          <button className="px-5 py-1 bg-[#EFEFEF] rounded-2xl">Following</button>
         </div>
         <ul className="flex flex-row gap-10">
           <li className="tex">11 post</li>
