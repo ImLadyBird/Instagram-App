@@ -27,7 +27,8 @@ export default function Postcard() {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(response.data);
+      setPosts(response.data.Articles);
+      console.log(response.data.Articles);
     } catch {
       console.log("error");
     }
@@ -50,38 +51,45 @@ export default function Postcard() {
     );
   }
 
-  return (
-    <div className="flex flex-row gap-40 ">
-      <Aside />
-      <div className="flex flex-col gap-5 py-8">
-        <div className="flex flex-row items-center justify-between">
-          <div className="flex flex-row gap-2 items-center justify-center">
-            <img src={louisLogo} alt="image" />
-            <p>lewishamilton</p>
-            <img src={Tic} alt="" />
-            <p>5h</p>
+    return (
+  <div className="flex flex-row gap-40 ">
+    <Aside />
+    <div className="flex flex-col gap-5 py-8">
+      {posts.map((post) => (
+        <div key={post._id}>
+          <div className="flex flex-row items-center justify-between">
+            <div className="flex flex-row gap-2 items-center justify-center">
+              <img src={louisLogo} alt="image" />
+              <p>lewishamilton</p>
+              <img src={Tic} alt="" />
+              <p>5h</p>
+            </div>
+            <img src={Dots} alt="" />
           </div>
-          <img src={Dots} alt="" />
-        </div>
-        <img src={Louis} className="w-[500px]" />
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-row gap-3">
-            <img src={Like} alt="like-button" />
-            <img src={Comments} alt="comment-button" />
+
+          <img src={Louis} className="w-[500px]" />
+
+          <div className="flex flex-row justify-between">
+            <div className="flex flex-row gap-3">
+              <img src={Like} alt="like-button" />
+              <img src={Comments} alt="comment-button" />
+            </div>
+            <img src={Save} alt="save-button" className="" />
           </div>
-          <img src={Save} alt="save-button" className="" />
+
+          <div>
+            <p>741,368 likes</p>
+            <p>
+              <span className="font-bold">lewishamilton</span> {post.content}
+            </p>
+            <p className="font-bold">See translation</p>
+            <p className="text-gray-400">View all 13,384 comments</p>
+            <p className="font-bold">Add a comment…</p>
+          </div>
         </div>
-        <div>
-          <p>741,368 likes</p>
-          <p>
-            <span className="font-bold">lewishamilton</span>Parabéns Ayrton,
-            minha inspiração sempre 🇧🇷💫
-          </p>
-          <p className="font-bold">See translation</p>
-          <p className="text-gray-400">View all 13,384 comments</p>
-          <p className="font-bold">Add a comment…</p>
-        </div>
-      </div>
+      ))}
     </div>
-  );
+  </div>
+);
+
 }

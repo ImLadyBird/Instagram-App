@@ -63,13 +63,6 @@ export default function CreatePost() {
             <p className="text-sm text-gray-500 mt-2">Selected: {file.name}</p>
           )}
         </div>
-
-        {/* <button
-          type="submit"
-          className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg transition"
-        >
-          Post
-        </button> */}
       </form>
     </div>
     </div>
