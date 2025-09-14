@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { client } from "../../Lib/idex";
 import { useNavigate, Link } from "react-router";
 import { useState } from "react";
+ import { ToastContainer, toast } from 'react-toastify';
 
 const forSchema = z.object({
   username: z
@@ -19,6 +20,7 @@ const forSchema = z.object({
 });
 
 export default function SignUp() {
+    const notify = () => toast("Wow so easy!");
     const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -80,11 +82,13 @@ export default function SignUp() {
           </div>
           <span className="text-red-500">{errors?.password?.message}</span>
           <button
+          onClick={notify}
             type="submit"
             className="bg-[#44B8FA] text-white font-bold py-3 rounded-[12px] border-1 border-[#8a8888a9]"
           >
             Sign Up
           </button>
+          <ToastContainer />
         </form>
         <div className="flex flex-row gap-1 justify-center">
           <p>Already have an account?</p>

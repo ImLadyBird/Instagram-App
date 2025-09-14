@@ -6,6 +6,7 @@ import { client } from "../../Lib/idex";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const forSchema = z.object({
   username: z
@@ -19,6 +20,7 @@ const forSchema = z.object({
 });
 
 export default function Login() {
+    const notify = () => toast("Wow so easy!");
     const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -36,6 +38,7 @@ export default function Login() {
 );
       console.log(response);
       navigate("/login/postcard");
+      
     } catch {
       console.log("error");
     }
@@ -79,9 +82,11 @@ export default function Login() {
           <button
             type="submit"
             className="bg-[#44B8FA] text-white font-bold py-3 rounded-[12px] border-1 border-[#8a8888a9]"
+            onClick={notify}
           >
             Log in
           </button>
+          <ToastContainer/>
         </form>
         <div className="flex flex-row gap-1 justify-center">
           <p>Don’t have an account?</p>

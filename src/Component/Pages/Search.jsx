@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Aside from "./aside";
+import { Link } from "react-router";
 
 const Search = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [query, setQuery] = useState("");
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -48,12 +49,10 @@ const Search = () => {
     }
   };
 
-
   return (
     <div className="">
-      
-       <Aside toggleSearch={toggleSearch} />
-     
+      <Aside toggleSearch={toggleSearch} />
+
       {isOpen && (
         <div className="absolute w-[350px] bg-white shadow-lg rounded-lg p-4 z-10 top-17 ml-30 border border-[#DBDBDB] {isOpen ? 'block' : 'hidden'}">
           <h2 className="mb-[37px] text-[#262626] font-semibold text-[23px]">
@@ -73,9 +72,11 @@ const Search = () => {
           )}
           <div className="space-y-2">
             {users.map((user) => (
-              <div
+              <Link
                 key={user._id}
-                className="flex items-center justify-between p-2 last:border-b-0"
+                to={"/login/postcard/search/userpage"} 
+                className="flex items-center justify-between p-2 last:border-b-0 hover:bg-gray-100 rounded"
+                onClick={toggleSearch} 
               >
                 <div className="flex items-center">
                   <img
@@ -88,7 +89,7 @@ const Search = () => {
                 <button className="text-red-500">
                   <img src="public/Frame (4).png" alt="" />
                 </button>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
