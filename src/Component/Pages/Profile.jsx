@@ -1,4 +1,4 @@
-import instaFont from "../../images/icon/instaText.svg";
+import InstaFont from "../../images/icon/instaText.svg";
 import Home from "../../images/icon/Home.svg";
 import Search from "../../images/icon/Search.svg";
 import Save from "../../images/icon/Save.svg";

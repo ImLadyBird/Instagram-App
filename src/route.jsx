@@ -4,9 +4,12 @@ import Login from "./Component/Pages/Login";
 import Profile from "./Component/Pages/Profile";
 import Postcard from "./Component/Pages/Postcard";
 import Search from "./Component/Pages/Search";
-import UserPage from "./Component/UserPage";
+
 import CreatePost from "./Component/CreatePost";
 import CreatePostDrag from "./Component/CreatePostDarg";
+
+import Userpage from "./Component/Pages/Userpage";
+
 
 export const router = createBrowserRouter([
   {
@@ -30,38 +33,14 @@ export const router = createBrowserRouter([
     element: <Search />,
   },
   {
-    path: "/login/postcard/userpage",
-    element: <UserPage/>
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  ,{
     path:"/login/postcard/createpost",
     element:<CreatePost/>
-  }
-  ,{
-    path:"/login/postcard/createpost",
-    element:<CreatePostDrag/>
-  }
+  },
+   {
+   path : "/login/postcard/search/userpage",
+        element : <Userpage/>
+  },
 
-]);
+ 
+])
+  
