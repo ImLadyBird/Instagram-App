@@ -5,6 +5,8 @@ import Profile from "./Component/Pages/Profile";
 import Postcard from "./Component/Pages/Postcard";
 import Search from "./Component/Pages/Search";
 import UserPage from "./Component/UserPage";
+import CreatePost from "./Component/CreatePost";
+import CreatePostDrag from "./Component/CreatePostDarg";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +32,36 @@ export const router = createBrowserRouter([
   {
     path: "/login/postcard/userpage",
     element: <UserPage/>
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ,{
+    path:"/login/postcard/createpost",
+    element:<CreatePost/>
+  }
+  ,{
+    path:"/login/postcard/createpost",
+    element:<CreatePostDrag/>
   }
 
 ]);
