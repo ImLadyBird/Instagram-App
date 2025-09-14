@@ -5,7 +5,10 @@ export default function HeaderInsta() {
     <div className="flex flex-row w-3/4 pt-9 gap-24 h-64 mt-9 items-center border-b border-zinc-200 pb-19 ">
       <img className=" rounded-[50%] " src={BigProfile} alt="BigProfile" />
       <div className="flex flex-col gap-">
+        <div className="flex gap-10">
         <h2 className="text-2xl pb-3">upvox_</h2>
+          <button className="px-5 py-1 bg-[#EFEFEF] rounded-2xl">Following</button>
+        </div>
         <ul className="flex flex-row gap-10">
           <li className="tex">11 post</li>
           <li>41 followers</li>
