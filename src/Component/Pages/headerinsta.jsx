@@ -1,4 +1,6 @@
-import BigProfile from "../../images/icon/BigProfile"
+
+import BigProfile from "../../images/icon/bigProfile.svg"
+
 
 export default function HeaderInsta() {
   return (
