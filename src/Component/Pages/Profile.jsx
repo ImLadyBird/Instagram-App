@@ -11,9 +11,11 @@ import PostsLayout from "../PostsLayout";
 export default function Profile() {
   return (
     <div className="flex justify-between">
-      <Aside/>
-      <HeaderInsta/>
-      <PostsLayout/>
+      <Aside />
+      <div className="max-w-9/12">
+        <HeaderInsta />
+        <PostsLayout />
+      </div>
     </div>
   );
 }
