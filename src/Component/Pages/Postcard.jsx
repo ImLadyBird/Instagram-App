@@ -31,6 +31,7 @@ export default function Postcard() {
       console.log(response.data.Articles);
     } catch {
       console.log("error");
+      setError(true);
     }
     setLoading(false);
   }
