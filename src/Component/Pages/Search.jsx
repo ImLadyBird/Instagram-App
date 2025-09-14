@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Aside from "./aside";
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,17 +54,9 @@ const Search = () => {
 
   return (
     <div className="">
-      <button
-        onClick={toggleSearch}
-        className="focus:outline-none flex items-center mb-3"
-      >
-        <img
-          className="hover:border hover:rounded-full hover:border-[#ccc] hover:p-2 p-2"
-          src="public/Frame (1).png"
-          alt=""
-        />
-        <span className="ml-2 text-gray-600 hover:text-black">Search</span>
-      </button>
+      
+       <Aside toggleSearch={toggleSearch} />
+     
       {isOpen && (
         <div className="absolute w-[350px] bg-white shadow-lg rounded-lg p-4 z-10 top-0 ml-10 border border-[#DBDBDB]">
           <h2 className="mb-[37px] text-[#262626] font-semibold text-[23px]">
