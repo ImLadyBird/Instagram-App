@@ -24,8 +24,42 @@ import Frame21 from "../../images/User-acc/frame21.svg";
 import Frame22 from "../../images/User-acc/frame22.svg";
 import Frame23 from "../../images/User-acc/frame23.svg";
 import { Link } from "react-router";
+import { client } from "../../Lib/idex";
+import { useEffect, useState } from "react";
 
 export default function Userpage() {
+  const [followeing, setfollowing] = useState(3);
+  const [followers, setfollowers] = useState(3);
+  async function getData() {
+    try {
+      const token = localStorage.getItem("token");
+      const res = await client.get("/user/followers/johndoe", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      const resFollowing = await client.get('/user/followings/johndoe',{
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+      })
+
+      const followeingArray = res.data.data.followings.length;
+      setfollowing(followeingArray);
+      console.log(followeingArray);
+
+
+    //   const followersArray = res.data.data
+    console.log(resFollowing.data.followings.length);
+setfollowers(resFollowing.data.followings.length)    
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className="flex ">
       <Aside />
@@ -43,8 +77,8 @@ export default function Userpage() {
               </div>
               <ul className="flex flex-row gap-10">
                 <li className="tex">1,861 posts</li>
-                <li>4M followers</li>
-                <li>454 following</li>
+                <li>{followers} followers</li>
+                <li>{followeing} following</li>
               </ul>
               <div className="pt-3.5">
                 <h3 className="text-[22px]">Marques Brownlee</h3>

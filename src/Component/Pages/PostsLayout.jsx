@@ -4,7 +4,7 @@ import leftimg from "../../images/postLayoutimgs/post-left1.svg"
 
 import midimg from "../../images/postLayoutimgs/post-middel.svg"
 
-import midimg from "../../images/postLayoutimgs/post-left1.svg"
+
 import emptypro from "../../images/postLayoutimgs/emptyimg.svg"
 
 export default function PostsLayout() {

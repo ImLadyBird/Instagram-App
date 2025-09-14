@@ -18,6 +18,7 @@ const [posts, setPosts] = useState([]);
         },
       });
       
+      
       console.log(response.data);
     } catch {
       console.log("error");
