@@ -32,7 +32,8 @@ export default function Login() {
   async function loginFunc({ username, password }) {
     try {
       const response = await client.post("/user/login", { username, password });
-      localStorage.setItem("token", response.data.jwt);
+      localStorage.setItem("token", response.data.accessToken
+);
       console.log(response);
       navigate("/login/postcard");
     } catch {

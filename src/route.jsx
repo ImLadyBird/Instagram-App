@@ -7,19 +7,19 @@ import Search from "./Component/Pages/Search";
 import Userpage from "./Component/Pages/Userpage";
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <SignUp/>
-    },
-    {
-        path: "/login",
-        element: <Login/>
-    },
-    {
-        path : "/login/postcard",
-        element : <Postcard/>
-    },
-     {
+  {
+    path: "/",
+    element: <SignUp />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/login/postcard",
+    element: <Postcard />,
+  },
+  {
     path: "/login/postcard/profile",
     element: <Profile />,
   },
