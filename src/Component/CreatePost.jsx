@@ -19,7 +19,7 @@ export default function CreatePost() {
     <div className="flex" >
         <Aside/>
         
-    <div className="flex justify-center items-center min-h-screen w-10/12 ">
+    <div className="flex justify-center items-center min-h-screen w-10/12 w-full">
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-2xl p-6 w-full max-w-md"

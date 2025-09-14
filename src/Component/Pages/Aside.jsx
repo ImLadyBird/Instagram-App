@@ -21,7 +21,7 @@ export default function Aside({ toggleSearch }) {
             <img src={Search} alt="Search-Logo" />
             <button onClick={toggleSearch} className="cursor-pointer">Search</button>
           </NavLink>
-          <NavLink to={"/login/postcard"} className="flex flex-row gap-2">
+          <NavLink to={"/login/postcard/createpost"} className="flex flex-row gap-2">
             <img src={Create} alt="Create-Logo" />
             Create
           </NavLink>
