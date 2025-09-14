@@ -39,7 +39,6 @@ export default function CreatePost() {
   return (
     <div className="flex">
       <Aside />
-
       <div className="flex justify-center items-center mt-16 w-full">
         <form
           onSubmit={handleSubmit}
@@ -77,6 +76,7 @@ export default function CreatePost() {
           </button>
         </form>
       </div>
+>>>>>>> e210e0ea2c8aaddea18bca5ba91f7348c01fc684
     </div>
   );
 }
