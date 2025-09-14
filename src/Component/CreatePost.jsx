@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Aside from "./Pages/aside";
 import { client } from "../Lib/idex";
+import { ToastContainer, toast } from 'react-toastify';
+  
 
 export default function CreatePost() {
+  const notify = () => toast("Wow so easy!");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -26,7 +29,6 @@ export default function CreatePost() {
       );
 
       if (response.status === 201 || response.status === 200) {
-        alert("Post created successfully!");
         setTitle("");
         setContent("");
       }
@@ -69,14 +71,15 @@ export default function CreatePost() {
           </div>
 
           <button
+          onClick={notify}
             type="submit"
             className="w-full bg-blue-700 text-white py-2 rounded-lg transition"
           >
             Post
           </button>
+          <ToastContainer />
         </form>
       </div>
->>>>>>> e210e0ea2c8aaddea18bca5ba91f7348c01fc684
     </div>
   );
 }
