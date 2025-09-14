@@ -9,6 +9,7 @@ export default function PostsLayout() {
         <img src={rightimg} />
         <img src={midimg} />
         <img src={leftimg} />
+
         <img src={rightimg} />
         <img src={emptypro} />
         <img src={emptypro} />
