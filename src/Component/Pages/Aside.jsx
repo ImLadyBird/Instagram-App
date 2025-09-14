@@ -14,7 +14,7 @@ export default function Aside() {
   return (
     <div className="p-5 w-1/4">
       <div>
-        <img src={insta} alt="" className="max-h-[35px] mb-4" />
+        <img src={insta} alt="" className="max-h-[35px] mb-4 " />
         <div className="flex gap-4 flex-col">
         <NavLink to={"/login/postcard"} className="flex flex-row gap-2" ><img src={Home} alt="Home-Logo" /> Home</NavLink>
         <NavLink to={"/login"} className="flex flex-row gap-2" ><img src={Search} alt="Search-Logo" />Search</NavLink>
