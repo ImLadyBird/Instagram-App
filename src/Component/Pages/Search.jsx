@@ -48,9 +48,6 @@ const Search = () => {
     }
   };
 
-  const clearRecentItems = () => {
-    setUsers([]);
-  };
 
   return (
     <div className="">
@@ -74,17 +71,6 @@ const Search = () => {
           {!loading && !error && users.length === 0 && query && (
             <div className="text-gray-500">user not found</div>
           )}
-          <div className="justify-between items-center mb-2 border-t border-[#DBDBDB] mt-[25px]">
-            <div className="mt-[18px] flex justify-between items-center">
-              <span className="font-medium">Recent</span>
-              <button
-                onClick={clearRecentItems}
-                className="text-blue-500 text-sm"
-              >
-                Clear all
-              </button>
-            </div>
-          </div>
           <div className="space-y-2">
             {users.map((user) => (
               <div
