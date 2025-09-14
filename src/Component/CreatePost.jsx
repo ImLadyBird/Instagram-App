@@ -39,46 +39,6 @@ export default function CreatePost() {
   return (
     <div className="flex">
       <Aside />
-
-<<<<<<< HEAD
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full  rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
-
-        <div className="mb-4">
-          <textarea
-            placeholder="Content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            className="w-full  rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400"
-            rows="4"
-          />
-        </div>
-
-        <div className="mb-6">
-          <label className="w-full flex justify-center items-center cursor-pointer">
-            <input
-              type="file"
-              onChange={handleFileChange}
-              className="hidden"
-            />
-            <span className="bg-blue-400 hover:bg-blue-500 text-white px-5 py-2.5 rounded-[40px] transition">
-              Select from computer
-            </span>
-          </label>
-          {file && (
-            <p className="text-sm text-gray-500 mt-2">Selected: {file.name}</p>
-          )}
-        </div>
-      </form>
-    </div>
-=======
       <div className="flex justify-center items-center mt-16 w-full">
         <form
           onSubmit={handleSubmit}
