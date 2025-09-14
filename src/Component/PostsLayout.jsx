@@ -8,6 +8,7 @@ export default function PostsLayout() {
         <img src={rightimg} />
         <img src={midimg} />
         <img src={leftimg} />
+        
     </div>
   )
 }
